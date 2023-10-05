@@ -4,8 +4,20 @@
 ------------------------------------------------------- */
 const router = require('express').Router()
 
-// Call Controlers:
-const { BlogPost } = require('../controllers/blogController')
+// Call Controllers:
+const { BlogCategory, BlogPost } = require('../controllers/blogController')
+
+// ------------------------------------------
+// BlogCategory
+// ------------------------------------------
+router.route('/category')
+    .get(BlogCategory.list)
+    .post(BlogCategory.create)
+
+router.route('/category/:categoryId')
+    .get(BlogCategory.read)
+    .put(BlogCategory.update)
+    .delete(BlogCategory.delete)
 
 // ------------------------------------------
 // BlogPost
