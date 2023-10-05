@@ -82,7 +82,7 @@ module.exports.BlogPost = {
 
     list: async (req, res) => {
 
-        const data = await BlogPost.find()
+        const data = await BlogPost.find().populate('blogCategoryId')
 
         res.status(200).send({
             error: false,
@@ -90,6 +90,18 @@ module.exports.BlogPost = {
             result: data
         })
     },
+
+    listInCategory: async (req, res) => {
+
+        const data = await BlogPost.find({ blogCategoryId: req.params.categoryId }).populate('blogCategoryId') // get Primary Data
+
+        res.status(200).send({
+            error: false,
+            count: data.length,
+            result: data
+        })
+    },
+
 
     create: async (req, res) => {
         
