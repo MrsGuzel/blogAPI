@@ -57,6 +57,12 @@ const blogPostSchema = new mongoose.Schema({
 
     // _id
 
+    blogCatergyId: {
+        type: mongoose.Schema.ObjectId, // Relational ObjectId
+        ref: 'BlogCategory', // ModelName
+        required: true,
+    },
+
     title: {
         type: String,
         trim: true,
@@ -78,7 +84,6 @@ const blogPostSchema = new mongoose.Schema({
     // updatedAt
 
 }, { collection: 'blogPosts', timestamps: true })
-
 
 // const BlogPostModel = mongoose.model('BlogPost', blogPostSchema)
 // module.exports = {

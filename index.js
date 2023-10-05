@@ -29,12 +29,9 @@ app.all('/', (req, res) => {
 // Routes:
 app.use('/blog', require('./src/routes/blogRoute'))
 
-//synchronizasyon
-require('./src/sync')()
-
-
 /* ------------------------------------------------------- */
-
+// Synchronization:
+require('./src/sync')
 
 // errorHandler:
 app.use(require('./src/errorHandler'))
