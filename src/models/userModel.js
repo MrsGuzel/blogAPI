@@ -1,6 +1,6 @@
 "use strict"
 /* -------------------------------------------------------
-    EXPRESSJS - BLOG Project with Mongoose
+    EXPRESS JS - BLOG Project with Mongoose
 ------------------------------------------------------- */
 
 const mongoose = require('mongoose')
